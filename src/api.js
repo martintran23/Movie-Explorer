@@ -4,7 +4,7 @@ const API_KEY = (process.env.REACT_APP_TMDB_KEY || "").trim();
 function ensureEnvApiKey() {
   if (!API_KEY) {
     throw new Error(
-      "Missing REACT_APP_TMDB_KEY. Set it in .env at the project root and restart npm start."
+      "Missing REACT_APP_TMDB_KEY. For local dev, add it to .env and restart npm start. On Vercel, add it under Project Settings → Environment Variables (Production) and redeploy."
     );
   }
 }
