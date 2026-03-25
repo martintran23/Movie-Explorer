@@ -1,12 +1,14 @@
-﻿import React from "react";
+import React from "react";
 
 function Pagination({ currentPage, totalPages, onPrevious, onNext }) {
   return (
-    <div className="pagination">
+    <nav className="pagination" aria-label="Pagination">
       <button className="pagination-button" onClick={onPrevious} disabled={currentPage === 1}>
         Previous
       </button>
-      <span className="page-indicator">Page {currentPage}</span>
+      <span className="page-indicator">
+        Page {currentPage} of {totalPages}
+      </span>
       <button
         className="pagination-button"
         onClick={onNext}
@@ -14,7 +16,7 @@ function Pagination({ currentPage, totalPages, onPrevious, onNext }) {
       >
         Next
       </button>
-    </div>
+    </nav>
   );
 }
 
